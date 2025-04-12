@@ -1,0 +1,74 @@
+{
+    "steps": "UP, UP, UP, RIGHT, RIGHT, DOWN,DOWN,DOWN, RIGHT, RIGHT,RIGHT"
+}
+
+w pola o współrzędnych (3,1), (2,1), (0,1), (2,3), (1,3) wpisz X
+
+<snippet_objective>
+znajdz droge poruszając sie po macierzy 
+</snippet_objective>
+
+<snippet_rules>
+- Zapisz macierz 4x6 w jej pola wpisz jej współrzędne, 
+- w pola o współrzędnych (3,1), (2,1), (0,1), (2,3), (1,3) wpisz (x,x)
+- nie możesz wykorzystać do ruchu pola o współrzędnych (3,1), (2,1), (0,1), (2,3), (1,3)
+- nie mozesz wykorzystywac do ruchu pola z wartoscia (x,x)
+- pole z ktorego wykonujesz ruch musi sasiadowac z polem do ktorego wykonujesz ruch
+- jesli w tak powstzalchych, sąsiadujących parach współrzędnych zmieniają się wartości zapisz je według takiego kodu:
+    - jeśli wartość pola wiersza maleje wpisz UP
+    przykład: 
+    (3,0)(2,0) zapisz UP 
+    (2,0)(1,0) zapisz UP
+    (1,0)(0,0) zapisz UP 
+
+    - jeśli wartość pola kolumny rośnie wpisz RIGHT
+    przykład: 
+    (0,0)(0,1) zapisz RIGHT 
+    (0,1)(0,2) zapisz RIGHT
+    (0,2)(0,3) zapisz RIGHT 
+
+    - jeśli wartość pola wiersza rośnie wpisz DOWN
+    przykład 
+    (0,3)(1,3) DOWN
+    (1,3)(2,3) DOWN 
+    (2,3)(3,3) DOWN 
+    jeśli wartość pola kolumny maleje wpisz LEFT
+
+- zaczynajac od punktu (3.0) wyznacz droge przez kolejne, sąsiadujące ze soba pola macierzy tak aby dotrzec od punktu o wspolrzednych (3,5) 
+</snippet_rules>
+przedstaw macierz
+przedstaw droge
+
+opowiedz zapisz wedlug schematu
+
+<RESULT>
+{
+    "steps": "UP, RIGHT,DOWN"
+}
+</RESULT>
+</snippet_rules>
+
+*/
+
+(0,0) (0,1) (0,2) (0,3) (0,4) (0,5)
+(1,0) (1,1) (1,2) (1,3) (1,4) (1,5)
+(2,0) (2,1) (2,2) (2,3) (2,4) (2,5)
+(3,0) (3,1) (3,2) (3,3) (3,4) (3,5)
+
+
+(4,0) (4,1) (4,2) (4,3) (4,4) (4,5)
+
+Mam labirynt o wymiarach 4 na 6. 
+Lewy górny róg to pozycja (0,0). 
+Prawy dolny róg to pozycja (3,5). 
+Można poruszać tylko lewo - LEFT, prawo - RIGHT, w górę - UP, w doł - DOWN.
+Ruch RIGHT z pozycji (0,0) do (0,1).
+Ruch DOWN z pozycji (1,1) do (2,1).
+Ruch UP z (2,0) do (1,0) 
+Na pozycjach (3,1), (2,1), (0,1), (2,3), (1,3) są przeszkody i nie można wejść na te pola. 
+Jesteś na pozycji (3,0).
+Napisz listę kroków które pozwolą dojść do dokładnie do pozycji (3,5) omijając przeszkody. 
+Wynik pokaż jako JSON z polem ""steps"" oraz wartością w postaci kodów ruchów rozdzielnych przecinkiem i spacją.
+Zwróć dokładny tok rozumowania oraz JSON w tagu <RESULT></RESULT>
+
+https://www.figma.com/board/89mVHEY0P7X3VOKoU1vxVU/EM-System-Design--Pawe%C5%82-%C5%9Alusarczyk?node-id=0-1&p=f&t=veyO15zDi8kxDT1e-0
